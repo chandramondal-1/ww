@@ -272,6 +272,32 @@ export function SiteChrome({ categories, searchIndex, children }: SiteChromeProp
               <p>{siteConfig.email}</p>
               <p>{siteConfig.supportHours}</p>
             </div>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                aria-label="Instagram"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:-translate-y-0.5 hover:bg-white/15"
+                href={siteConfig.instagramUrl}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <svg aria-hidden="true" className="h-5 w-5" fill="none" viewBox="0 0 24 24">
+                  <rect height="18" rx="5" ry="5" stroke="currentColor" strokeWidth="1.8" width="18" x="3" y="3" />
+                  <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
+                  <circle cx="17.5" cy="6.5" fill="currentColor" r="1" />
+                </svg>
+              </a>
+              <a
+                aria-label="Facebook"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:-translate-y-0.5 hover:bg-white/15"
+                href={siteConfig.facebookUrl}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <svg aria-hidden="true" className="h-5 w-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9c0-.7.3-1 1-1z" />
+                </svg>
+              </a>
+            </div>
           </div>
 
           <div>

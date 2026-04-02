@@ -129,6 +129,8 @@
     phone: "+91 70295 19022",
     whatsappNumber: "917029519022",
     email: "agaunny2000@gmail.com",
+    instagramUrl: "https://www.instagram.com/sunseatings",
+    facebookUrl: "https://www.facebook.com/profile.php?id=61580987248000",
     catalogPdf: catalogPdfUrl(),
     loaderLogo: assetPath("LOGO", "SUN SEATINGS Loader.png"),
     address: "PCM Tower, Sevoke Road, Siliguri 734001",

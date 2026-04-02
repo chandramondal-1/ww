@@ -171,6 +171,8 @@ export interface SiteConfig {
   phone: string;
   whatsappNumber: string;
   email: string;
+  instagramUrl: string;
+  facebookUrl: string;
   address: string;
   supportHours: string;
 }

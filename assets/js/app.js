@@ -113,6 +113,36 @@
     return window.scrollY || window.pageYOffset || 0;
   }
 
+  function socialIconMarkup(type) {
+    if (type === "instagram") {
+      return (
+        '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+        '  <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>' +
+        '  <circle cx="12" cy="12" r="4"></circle>' +
+        '  <circle cx="17.5" cy="6.5" r="1"></circle>' +
+        "</svg>"
+      );
+    }
+
+    return (
+      '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+      '  <path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9c0-.7.3-1 1-1z"></path>' +
+      "</svg>"
+    );
+  }
+
+  function socialLinkMarkup(label, href, type) {
+    return (
+      '<a class="footer-social-link" href="' +
+      href +
+      '" target="_blank" rel="noreferrer" aria-label="' +
+      escapeHtml(label) +
+      '">' +
+      socialIconMarkup(type) +
+      "</a>"
+    );
+  }
+
   function mountSiteLoader() {
     if (!document.body) {
       return;
@@ -293,6 +323,10 @@
       '        <a href="' + DATA.buildPhoneLink(DATA.siteConfig.phone) + '">' + escapeHtml(DATA.siteConfig.phone) + "</a>" +
       '        <a href="mailto:' + escapeHtml(DATA.siteConfig.email) + '">' + escapeHtml(DATA.siteConfig.email) + "</a>" +
       '        <span class="footer-meta">' + escapeHtml(DATA.siteConfig.supportHours) + "</span>" +
+      "      </div>" +
+      '      <div class="footer-socials">' +
+      socialLinkMarkup("Instagram", DATA.siteConfig.instagramUrl, "instagram") +
+      socialLinkMarkup("Facebook", DATA.siteConfig.facebookUrl, "facebook") +
       "      </div>" +
       "    </div>" +
       "    <div>" +

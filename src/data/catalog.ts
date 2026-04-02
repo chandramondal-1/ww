@@ -291,6 +291,10 @@ export const siteConfig: SiteConfig = {
   phone: process.env.NEXT_PUBLIC_PHONE_NUMBER || "+91 70295 19022",
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "917029519022",
   email: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "agaunny2000@gmail.com",
+  instagramUrl: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://www.instagram.com/sunseatings",
+  facebookUrl:
+    process.env.NEXT_PUBLIC_FACEBOOK_URL ||
+    "https://www.facebook.com/profile.php?id=61580987248000",
   address: process.env.NEXT_PUBLIC_SHOWROOM_ADDRESS || "PCM Tower, Sevoke Road, Siliguri 734001",
   supportHours: process.env.NEXT_PUBLIC_SUPPORT_HOURS || "Mon-Sat - 10:00 AM to 7:00 PM"
 };
