@@ -5,7 +5,7 @@ const ADMIN_COOKIE = "ww_admin_session";
 
 function getAdminCredentials() {
   return {
-    username: process.env.ADMIN_USERNAME || "admin@wickerandweave.in",
+    username: process.env.ADMIN_USERNAME || "agaunny2000@gmail.com",
     password: process.env.ADMIN_PASSWORD || "wicker123"
   };
 }

@@ -533,7 +533,7 @@
 
   function login(username, password) {
     var isValid =
-      username === "admin@wickerandweave.in" &&
+      username === "agaunny2000@gmail.com" &&
       password === "wicker123";
 
     if (isValid) {

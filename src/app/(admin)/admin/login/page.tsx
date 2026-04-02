@@ -34,7 +34,7 @@ export default async function AdminLoginPage({ searchParams }: AdminLoginPagePro
 
           <div className="mt-6 rounded-[28px] bg-[#f8fbff] p-5 text-sm text-[#1f2937]">
             <p>
-              Username: <span className="font-semibold">admin@wickerandweave.in</span>
+              Username: <span className="font-semibold">agaunny2000@gmail.com</span>
             </p>
             <p className="mt-2">
               Password: <span className="font-semibold">wicker123</span>
@@ -50,7 +50,7 @@ export default async function AdminLoginPage({ searchParams }: AdminLoginPagePro
               <span className="text-sm font-semibold text-[#1f2937]">Email</span>
               <input
                 className="h-12 w-full rounded-2xl border border-slate-200 px-4 outline-none focus:border-[#2874F0]"
-                defaultValue="admin@wickerandweave.in"
+                defaultValue="agaunny2000@gmail.com"
                 name="username"
                 required
                 type="email"

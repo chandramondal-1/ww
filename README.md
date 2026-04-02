@@ -41,7 +41,7 @@ The static site reads them directly from there.
 
 ## Demo admin login
 
-- Email: `admin@wickerandweave.in`
+- Email: `agaunny2000@gmail.com`
 - Password: `wicker123`
 
 ## Notes
