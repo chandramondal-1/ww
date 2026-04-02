@@ -237,7 +237,7 @@
       '      <div class="footer-link-list">' +
       '        <a href="shop.html">All Products</a>' +
       '        <a href="categories.html">Categories</a>' +
-      '        <a href="catalog.html">Catalog PDF</a>' +
+      '        <a href="' + DATA.siteConfig.catalogPdf + '" target="_blank" rel="noreferrer">Catalog PDF</a>' +
       '        <a href="blog.html">Design Journal</a>' +
       "      </div>" +
       "    </div>" +
@@ -1330,7 +1330,7 @@
         '          <a class="btn btn-green" href="' + DATA.buildWhatsAppLink(DATA.siteConfig.whatsappNumber, product.name) + '" target="_blank" rel="noreferrer">WhatsApp Now</a>' +
         '          <a class="btn btn-blue" href="' + DATA.buildPhoneLink(DATA.siteConfig.phone) + '">Call Now</a>' +
         '          <button class="btn btn-outline" type="button" data-open-quote="' + escapeHtml(product.id) + '">📝 Request Quote</button>' +
-        '          <a class="btn btn-outline" href="catalog.html">📥 Download Catalog</a>' +
+        '          <a class="btn btn-outline" href="' + DATA.siteConfig.catalogPdf + '" target="_blank" rel="noreferrer">📥 Download Catalog</a>' +
         "        </div>" +
         '        <div class="highlights"><p class="eyebrow" style="margin:0;color:var(--brand-muted);">Product Highlights</p><ul class="highlight-list">' +
         product.highlights
@@ -1484,12 +1484,11 @@
     content.innerHTML =
       '<section class="section"><div class="container">' +
       '  <div class="two-col">' +
-      '    <div class="surface card"><p class="eyebrow">Catalog PDF download page</p><h1 class="section-title">Get the digital catalog and request pricing in one flow.</h1><p class="section-subtitle">The current build is static, so the CTA is designed to capture catalog requests and customer details right inside the browser using plain HTML, CSS and JavaScript.</p></div>' +
+      '    <div class="surface card"><p class="eyebrow">Catalog PDF download page</p><h1 class="section-title">Open the digital catalog instantly.</h1><p class="section-subtitle">Use the button below to open the SUN SEATINGS catalog PDF directly in a new tab.</p><div class="stack-actions"><a class="btn btn-primary" href="' + DATA.siteConfig.catalogPdf + '" target="_blank" rel="noreferrer">Open Catalog PDF</a><a class="btn btn-outline" href="' + DATA.siteConfig.catalogPdf + '" download>Download PDF</a></div></div>' +
       '    <div class="surface card"><div class="grid grid-2"><div class="trust-card"><p class="eyebrow" style="color:var(--brand-muted);margin:0;">Categories</p><p class="stats-value">' + categories.length + '</p></div><div class="trust-card"><p class="eyebrow" style="color:var(--brand-muted);margin:0;">Products</p><p class="stats-value">' + products.length + "</p></div></div></div>" +
       "  </div>" +
-      '  <div style="margin-top:24px;">' + enquiryFormMarkup({ type: "catalog", title: "Request catalog PDF" }) + "</div>" +
+      '  <div class="surface card" style="margin-top:24px;overflow:hidden;"><iframe src="' + DATA.siteConfig.catalogPdf + '#toolbar=1&navpanes=0&view=FitH" title="SUN SEATINGS Catalog PDF" style="display:block;width:100%;height:min(80vh,960px);border:0;"></iframe></div>' +
       "</div></section>";
-    bindEnquiryForms(content);
   }
 
   function renderBlogPage() {

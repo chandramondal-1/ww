@@ -117,6 +117,10 @@
     return "blog-post.html?slug=" + encodeURIComponent(slug);
   }
 
+  function catalogPdfUrl() {
+    return encodeURI("public/assets/catalog/CATALOG/SUN SEATINGS 24-25.pdf");
+  }
+
   var siteConfig = {
     name: "SUN SEATINGS",
     tagline: "Exclusive Outdoor Furniture",
@@ -125,6 +129,7 @@
     phone: "+91 70295 19022",
     whatsappNumber: "917029519022",
     email: "agaunny2000@gmail.com",
+    catalogPdf: catalogPdfUrl(),
     address: "Jaipur Design Studio, Rajasthan, India",
     supportHours: "Mon-Sat - 10:00 AM to 7:00 PM"
   };
@@ -570,7 +575,7 @@
         "A cleaner catalog experience for buyers who want strong visuals, clear details and fast support on WhatsApp, call or quotation.",
       image: heroAsset("premium-living-1.avif"),
       ctaPrimary: { label: "Shop by Category", href: "categories.html" },
-      ctaSecondary: { label: "Get Catalog PDF", href: "catalog.html" },
+      ctaSecondary: { label: "Get Catalog PDF", href: catalogPdfUrl() },
       badges: ["Editorial styling", "Premium browsing", "Fast lead capture"],
       highlights: [
         "Full-size scenes that help products feel aspirational and premium",
@@ -812,6 +817,7 @@
     formatDate: formatDate,
     buildWhatsAppLink: buildWhatsAppLink,
     buildPhoneLink: buildPhoneLink,
+    catalogPdfUrl: catalogPdfUrl,
     categoryUrl: categoryUrl,
     productUrl: productUrl,
     blogPostUrl: blogPostUrl
