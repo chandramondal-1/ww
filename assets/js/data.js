@@ -118,7 +118,7 @@
   }
 
   function catalogPdfUrl() {
-    return encodeURI("public/assets/catalog/CATALOG/SUN SEATINGS 24-25.pdf");
+    return "https://drive.google.com/file/d/11VAEtUBjSpEOAe-WHDQUFFHlr0bzqm0R/view?usp=sharing";
   }
 
   var siteConfig = {

@@ -1484,10 +1484,10 @@
     content.innerHTML =
       '<section class="section"><div class="container">' +
       '  <div class="two-col">' +
-      '    <div class="surface card"><p class="eyebrow">Catalog PDF download page</p><h1 class="section-title">Open the digital catalog instantly.</h1><p class="section-subtitle">Use the button below to open the SUN SEATINGS catalog PDF directly in a new tab.</p><div class="stack-actions"><a class="btn btn-primary" href="' + DATA.siteConfig.catalogPdf + '" target="_blank" rel="noreferrer">Open Catalog PDF</a><a class="btn btn-outline" href="' + DATA.siteConfig.catalogPdf + '" download>Download PDF</a></div></div>' +
+      '    <div class="surface card"><p class="eyebrow">Catalog PDF download page</p><h1 class="section-title">Open the digital catalog instantly.</h1><p class="section-subtitle">When you click the button below, you will be redirected to the SUN SEATINGS catalog on Google Drive.</p><div class="stack-actions"><a class="btn btn-primary" href="' + DATA.siteConfig.catalogPdf + '" target="_blank" rel="noreferrer">Open Catalog PDF</a><a class="btn btn-outline" href="' + DATA.siteConfig.catalogPdf + '" target="_blank" rel="noreferrer">Go to Google Drive</a></div></div>' +
       '    <div class="surface card"><div class="grid grid-2"><div class="trust-card"><p class="eyebrow" style="color:var(--brand-muted);margin:0;">Categories</p><p class="stats-value">' + categories.length + '</p></div><div class="trust-card"><p class="eyebrow" style="color:var(--brand-muted);margin:0;">Products</p><p class="stats-value">' + products.length + "</p></div></div></div>" +
       "  </div>" +
-      '  <div class="surface card" style="margin-top:24px;overflow:hidden;"><iframe src="' + DATA.siteConfig.catalogPdf + '#toolbar=1&navpanes=0&view=FitH" title="SUN SEATINGS Catalog PDF" style="display:block;width:100%;height:min(80vh,960px);border:0;"></iframe></div>' +
+      '  <div class="surface card" style="margin-top:24px;text-align:center;"><p class="card-copy" style="margin-top:0;">Catalog access is hosted on Google Drive for easier sharing and viewing across devices.</p><div class="stack-actions" style="justify-content:center;"><a class="btn btn-primary" href="' + DATA.siteConfig.catalogPdf + '" target="_blank" rel="noreferrer">Open Catalog</a></div></div>' +
       "</div></section>";
   }
 
