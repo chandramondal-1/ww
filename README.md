@@ -50,3 +50,4 @@ The static site reads them directly from there.
 - The pure static version is the one served by the root `.html` files
 - Because this is now static, server features like PostgreSQL, SMTP and Cloudinary are not active in the HTML/JS version unless you reconnect them later through a real backend
 # ww
+# Wicker
