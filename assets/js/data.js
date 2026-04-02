@@ -130,6 +130,7 @@
     whatsappNumber: "917029519022",
     email: "agaunny2000@gmail.com",
     catalogPdf: catalogPdfUrl(),
+    loaderLogo: assetPath("LOGO", "SUN SEATINGS Loader.png"),
     address: "Jaipur Design Studio, Rajasthan, India",
     supportHours: "Mon-Sat - 10:00 AM to 7:00 PM"
   };

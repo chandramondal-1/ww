@@ -113,6 +113,69 @@
     return window.scrollY || window.pageYOffset || 0;
   }
 
+  function mountSiteLoader() {
+    if (!document.body) {
+      return;
+    }
+
+    var loader = document.createElement("div");
+    var duration = 2200;
+    var startTime = Date.now();
+    var countRaf = null;
+
+    document.body.classList.add("is-loading");
+    loader.className = "site-loader";
+    loader.innerHTML =
+      '<div class="site-loader-shell">' +
+      '  <div class="site-loader-orb" aria-hidden="true"></div>' +
+      '  <div class="site-loader-mark">' +
+      '    <img src="' + DATA.siteConfig.loaderLogo + '" alt="SUN SEATINGS crafted for comfort">' +
+      '    <div class="site-loader-shine" aria-hidden="true"></div>' +
+      "  </div>" +
+      '  <div class="site-loader-status">' +
+      '    <span class="site-loader-dot" aria-hidden="true"></span>' +
+      '    <span class="site-loader-copy">Crafted For Comfort</span>' +
+      '    <span class="site-loader-count" data-loader-count>00%</span>' +
+      "  </div>" +
+      '  <div class="site-loader-bar" aria-hidden="true"></div>' +
+      "</div>";
+
+    document.body.appendChild(loader);
+
+    function tickLoaderCount() {
+      var progress = Math.min((Date.now() - startTime) / duration, 1);
+      var count = loader.querySelector("[data-loader-count]");
+
+      if (count) {
+        count.textContent = String(Math.round(progress * 100)).padStart(2, "0") + "%";
+      }
+
+      if (progress < 1) {
+        countRaf = window.requestAnimationFrame(tickLoaderCount);
+      }
+    }
+
+    window.requestAnimationFrame(function () {
+      loader.classList.add("is-visible");
+      countRaf = window.requestAnimationFrame(tickLoaderCount);
+    });
+
+    window.setTimeout(function () {
+      if (countRaf) {
+        window.cancelAnimationFrame(countRaf);
+      }
+
+      loader.classList.add("is-hiding");
+      document.body.classList.remove("is-loading");
+
+      window.setTimeout(function () {
+        if (loader.parentNode) {
+          loader.parentNode.removeChild(loader);
+        }
+      }, 720);
+    }, duration);
+  }
+
   function navItems() {
     return [
       { href: "index.html", label: "Home", match: "home" },
@@ -1602,5 +1665,6 @@
     bindEnquiryForms(document);
   }
 
+  mountSiteLoader();
   initializePage();
 })();
