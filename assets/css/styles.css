@@ -1533,6 +1533,15 @@ button {
   gap: 12px;
 }
 
+.shop-filter-toggle,
+.shop-filter-drawer {
+  display: none;
+}
+
+.shop-filter-panel {
+  overflow: auto;
+}
+
 .shop-query-banner {
   margin-bottom: 20px;
   padding: 14px 18px;
@@ -2074,6 +2083,16 @@ button {
   margin-top: 24px;
 }
 
+.shop-filter-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 95;
+}
+
+.shop-filter-drawer.is-open {
+  display: block;
+}
+
 @media (max-width: 1180px) {
   .hero-grid,
   .review-layout,
@@ -2130,7 +2149,6 @@ button {
   .page-hero,
   .compact-hero,
   .review-shell,
-  .filter-panel,
   .shop-panel,
   .product-gallery,
   .product-info,
@@ -2144,6 +2162,22 @@ button {
   .grid-2,
   .shop-grid {
     grid-template-columns: 1fr;
+  }
+
+  .filter-panel {
+    display: none;
+  }
+
+  .shop-filter-toggle {
+    display: inline-flex;
+  }
+
+  .shop-toolbar .muted {
+    flex: 1 1 100%;
+  }
+
+  .shop-filter-panel {
+    width: min(92vw, 380px);
   }
 
   .hero-stats,

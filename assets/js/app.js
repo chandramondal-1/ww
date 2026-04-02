@@ -109,6 +109,10 @@
     return raw || "index.html";
   }
 
+  function getScrollY() {
+    return window.scrollY || window.pageYOffset || 0;
+  }
+
   function navItems() {
     return [
       { href: "index.html", label: "Home", match: "home" },
@@ -971,8 +975,27 @@
       price: maxPrice,
       query: getParam("q") || "",
       view: "grid",
-      visible: 12
+      visible: 12,
+      loadingMore: false,
+      lastLoadTriggerY: getScrollY()
     };
+
+    function renderShopFilters() {
+      return (
+        '<div class="split-row"><div><p class="card-title" style="margin:0;font-size:28px;">Filter products</p><p class="card-copy">Flipkart-style browsing controls</p></div><span class="badge badge-blue">Smart filters</span></div>' +
+        '      <div class="toolbar-actions" style="margin-top:18px;"><button class="btn btn-outline" data-clear-filters type="button">Reset Filters</button></div>' +
+        renderFilterGroup("Category", ["all"].concat(categories.map(function (category) { return category.slug; })), state.category, "category", function (slug) {
+          return slug === "all"
+            ? "All Products"
+            : categories.find(function (category) {
+                return category.slug === slug;
+              }).name;
+        }) +
+        '<div class="filter-group"><p class="filter-title">Price range</p><input data-price-range type="range" min="5000" max="' + maxPrice + '" value="' + state.price + '" style="width:100%;accent-color:var(--brand-blue);"><p class="range-value" data-price-value>Up to ' + DATA.formatCurrency(state.price) + "</p></div>" +
+        renderFilterGroup("Material", ["all", "rattan", "wood", "metal", "wicker"], state.material, "material", function (item) { return item; }) +
+        renderFilterGroup("Seating capacity", ["all", "1 seater", "2 seater", "4 seater", "5 seater", "6 seater"], state.seating, "seating", function (item) { return item; })
+      );
+    }
 
     function render() {
       var items = filteredProducts(state);
@@ -992,24 +1015,12 @@
         "</section>" +
         '<section class="section" style="padding-top:0;">' +
         '  <div class="container shop-layout">' +
-        '    <aside class="surface filter-panel">' +
-        '      <div class="split-row"><div><p class="card-title" style="margin:0;font-size:28px;">Filter products</p><p class="card-copy">Flipkart-style browsing controls</p></div><span class="badge badge-blue">Smart filters</span></div>' +
-        '      <div class="toolbar-actions" style="margin-top:18px;"><button class="btn btn-outline" id="clear-filters" type="button">Reset Filters</button></div>' +
-        renderFilterGroup("Category", ["all"].concat(categories.map(function (category) { return category.slug; })), state.category, "category", function (slug) {
-          return slug === "all"
-            ? "All Products"
-            : categories.find(function (category) {
-                return category.slug === slug;
-              }).name;
-        }) +
-        '<div class="filter-group"><p class="filter-title">Price range</p><input id="price-range" type="range" min="5000" max="' + maxPrice + '" value="' + state.price + '" style="width:100%;accent-color:var(--brand-blue);"><p class="range-value">Up to ' + DATA.formatCurrency(state.price) + "</p></div>" +
-        renderFilterGroup("Material", ["all", "rattan", "wood", "metal", "wicker"], state.material, "material", function (item) { return item; }) +
-        renderFilterGroup("Seating capacity", ["all", "1 seater", "2 seater", "4 seater", "5 seater", "6 seater"], state.seating, "seating", function (item) { return item; }) +
-        "    </aside>" +
+        '    <aside class="surface filter-panel">' + renderShopFilters() + "</aside>" +
         '    <section class="surface shop-panel">' +
         '      <div class="shop-toolbar">' +
         '        <p class="muted">Showing <strong style="color:var(--brand-text);">' + visible.length + "</strong> of " + items.length + " products</p>" +
         '        <div class="toolbar-actions">' +
+        '          <button class="btn btn-outline shop-filter-toggle" type="button" data-open-shop-filters>Filters</button>' +
         '          <div class="view-toggle">' +
         '            <button class="view-button' + (state.view === "grid" ? " is-active" : "") + '" type="button" data-view="grid">▦</button>' +
         '            <button class="view-button' + (state.view === "list" ? " is-active" : "") + '" type="button" data-view="list">☰</button>' +
@@ -1031,6 +1042,16 @@
         (visible.length < items.length ? '<p class="load-note">Loading more products as you scroll...</p>' : "") +
         "    </section>" +
         "  </div>" +
+        '  <div class="shop-filter-drawer" id="shop-filter-drawer">' +
+        '    <div class="mobile-backdrop" data-close-shop-filters="true"></div>' +
+        '    <div class="mobile-panel shop-filter-panel">' +
+        '      <div class="split-row">' +
+        '        <div><p class="logo-title" style="font-size:32px;margin:0;">Filters</p><p class="card-copy" style="margin-top:8px;">Refine the catalog without losing your place.</p></div>' +
+        '        <button class="circle-button" type="button" data-close-shop-filters="true">✕</button>' +
+        "      </div>" +
+               renderShopFilters() +
+        "    </div>" +
+        "  </div>" +
         "</section>";
 
       if (globalSearchInput) {
@@ -1043,26 +1064,59 @@
     }
 
     function bindShopInteractions() {
+      var shopFilterDrawer = document.getElementById("shop-filter-drawer");
+      var openShopFiltersButton = content.querySelector("[data-open-shop-filters]");
       content.querySelectorAll("[data-filter-group]").forEach(function (button) {
         button.addEventListener("click", function () {
           state[button.getAttribute("data-filter-group")] = button.getAttribute("data-filter-value");
           state.visible = 12;
+          state.lastLoadTriggerY = getScrollY();
+          closeShopFilterDrawer();
           render();
         });
       });
 
-      var priceRange = document.getElementById("price-range");
+      var priceRanges = content.querySelectorAll("[data-price-range]");
       var sortSelect = document.getElementById("sort-select");
-      var clearFiltersButton = document.getElementById("clear-filters");
+      var clearFiltersButtons = content.querySelectorAll("[data-clear-filters]");
       var emptyResetButton = document.getElementById("empty-reset");
 
-      if (priceRange) {
-        priceRange.addEventListener("input", function () {
-          state.price = Number(priceRange.value);
-          state.visible = 12;
-          render();
+      function closeShopFilterDrawer() {
+        if (shopFilterDrawer) {
+          shopFilterDrawer.classList.remove("is-open");
+        }
+        document.body.classList.remove("modal-open");
+      }
+
+      if (openShopFiltersButton && shopFilterDrawer) {
+        openShopFiltersButton.addEventListener("click", function () {
+          shopFilterDrawer.classList.add("is-open");
+          document.body.classList.add("modal-open");
+        });
+
+        shopFilterDrawer.addEventListener("click", function (event) {
+          if (event.target && event.target.getAttribute("data-close-shop-filters")) {
+            closeShopFilterDrawer();
+          }
         });
       }
+
+      priceRanges.forEach(function (priceRange) {
+        priceRange.addEventListener("input", function () {
+          state.price = Number(priceRange.value);
+          content.querySelectorAll("[data-price-value]").forEach(function (priceValue) {
+            priceValue.textContent = "Up to " + DATA.formatCurrency(state.price);
+          });
+        });
+
+        priceRange.addEventListener("change", function () {
+          state.price = Number(priceRange.value);
+          state.visible = 12;
+          state.lastLoadTriggerY = getScrollY();
+          closeShopFilterDrawer();
+          render();
+        });
+      });
 
       if (sortSelect) {
         sortSelect.addEventListener("change", function () {
@@ -1078,7 +1132,7 @@
         });
       });
 
-      if (clearFiltersButton) {
+      clearFiltersButtons.forEach(function (clearFiltersButton) {
         clearFiltersButton.addEventListener("click", function () {
           state.category = initialCategorySlug || "all";
           state.material = "all";
@@ -1087,9 +1141,11 @@
           state.price = maxPrice;
           state.query = "";
           state.visible = 12;
+          state.lastLoadTriggerY = getScrollY();
+          closeShopFilterDrawer();
           render();
         });
-      }
+      });
 
       if (emptyResetButton) {
         emptyResetButton.addEventListener("click", function () {
@@ -1100,6 +1156,8 @@
           state.price = maxPrice;
           state.query = "";
           state.visible = 12;
+          state.lastLoadTriggerY = getScrollY();
+          closeShopFilterDrawer();
           render();
         });
       }
@@ -1118,11 +1176,20 @@
       shopObserver = new IntersectionObserver(
         function (entries) {
           if (entries[0] && entries[0].isIntersecting) {
-            state.visible += 8;
+            var scrollY = getScrollY();
+
+            if (state.loadingMore || scrollY <= state.lastLoadTriggerY + 140) {
+              return;
+            }
+
+            state.loadingMore = true;
+            state.lastLoadTriggerY = scrollY;
+            state.visible = Math.min(state.visible + 8, total);
             render();
+            state.loadingMore = false;
           }
         },
-        { rootMargin: "220px" }
+        { rootMargin: "120px" }
       );
       shopObserver.observe(sentinel);
     }
