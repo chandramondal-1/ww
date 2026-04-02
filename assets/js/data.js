@@ -131,7 +131,7 @@
     email: "agaunny2000@gmail.com",
     catalogPdf: catalogPdfUrl(),
     loaderLogo: assetPath("LOGO", "SUN SEATINGS Loader.png"),
-    address: "Jaipur Design Studio, Rajasthan, India",
+    address: "PCM Tower, Sevoke Road, Siliguri 734001",
     supportHours: "Mon-Sat - 10:00 AM to 7:00 PM"
   };
 
