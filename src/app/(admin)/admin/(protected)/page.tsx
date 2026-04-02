@@ -16,7 +16,7 @@ export default async function AdminDashboardPage() {
       <div className="rounded-[34px] bg-white p-8 shadow-card">
         <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#2874F0]">Dashboard</p>
         <h1 className="mt-3 font-[var(--font-heading)] text-5xl font-semibold text-[#1f2937]">
-          Wicker & Weave admin overview
+          SUN SEATINGS admin overview
         </h1>
       </div>
 

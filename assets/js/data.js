@@ -92,7 +92,7 @@
   function buildWhatsAppLink(phone, productName) {
     var message = productName
       ? "I am interested in " + productName + ". Please share pricing, lead time and catalogue details."
-      : "Hello, I would like to know more about the Wicker & Weave collection.";
+      : "Hello, I would like to know more about the SUN SEATINGS collection.";
     return "https://wa.me/" + String(phone).replace(/\D/g, "") + "?text=" + encodeURIComponent(message);
   }
 
@@ -118,7 +118,7 @@
   }
 
   var siteConfig = {
-    name: "Wicker & Weave",
+    name: "SUN SEATINGS",
     tagline: "Exclusive Outdoor Furniture",
     description:
       "Luxury outdoor furniture catalog for modern homes, hospitality projects and premium terraces across India.",
@@ -477,7 +477,7 @@
           displayName +
           " is part of the " +
           category.name +
-          " collection by Wicker & Weave, built to bring hotel-style comfort to private homes, terraces, gardens and hospitality lounges.",
+          " collection by SUN SEATINGS, built to bring hotel-style comfort to private homes, terraces, gardens and hospitality lounges.",
         marketingCopy:
           displayName +
           " combines refined silhouette, weather-ready materials and an easy-luxury finish so your outdoor space feels intentional, polished and ready to host.",
@@ -524,12 +524,12 @@
         bestSeller: index % 3 === 0,
         deliveryEstimate: copy.leadTime,
         warranty: copy.warranty,
-        seoTitle: displayName + " | " + category.name + " by Wicker & Weave",
+        seoTitle: displayName + " | " + category.name + " by SUN SEATINGS",
         seoDescription:
           displayName +
           " from the " +
           category.name +
-          " collection. Explore dimensions, highlights, project-ready pricing and quotation support from Wicker & Weave."
+          " collection. Explore dimensions, highlights, project-ready pricing and quotation support from SUN SEATINGS."
       });
     });
   });
@@ -743,11 +743,11 @@
       excerpt:
         "A practical guide to selecting weather-ready wicker, cushions and finishes without compromising on style.",
       body:
-        "Luxury outdoor furniture should look refined, but it also needs to withstand heat, humidity and regular use.\n\nStart with an all-weather frame, ask for UV-ready weave quality and check if cushions are designed for faster drying. For terraces and rooftops, modular sofa sets and compact coffee sets usually deliver the best layout flexibility.\n\nFor hospitality projects, dining collections and loungers should balance comfort with easy maintenance. Wicker & Weave recommends choosing by space usage first, then by finish, then by quotation lead time.",
+        "Luxury outdoor furniture should look refined, but it also needs to withstand heat, humidity and regular use.\n\nStart with an all-weather frame, ask for UV-ready weave quality and check if cushions are designed for faster drying. For terraces and rooftops, modular sofa sets and compact coffee sets usually deliver the best layout flexibility.\n\nFor hospitality projects, dining collections and loungers should balance comfort with easy maintenance. SUN SEATINGS recommends choosing by space usage first, then by finish, then by quotation lead time.",
       featuredImage: assetPath("Sofa Sets", "Cascade.png"),
       tags: ["Outdoor Furniture", "Buying Guide", "Luxury Living"],
       publishedAt: "2026-03-14T09:00:00.000Z",
-      seoTitle: "How to choose luxury outdoor furniture in India | Wicker & Weave",
+      seoTitle: "How to choose luxury outdoor furniture in India | SUN SEATINGS",
       seoDescription:
         "Learn how to choose outdoor furniture for Indian weather, from wicker quality and cushions to layouts and maintenance."
     },
@@ -763,7 +763,7 @@
       featuredImage: assetPath("Dining Sets", "WW-43 (6 chair + 1 table)s.png"),
       tags: ["Dining Sets", "Outdoor Styling", "Hospitality"],
       publishedAt: "2026-03-18T09:00:00.000Z",
-      seoTitle: "Outdoor dining set ideas for terraces and cafes | Wicker & Weave",
+      seoTitle: "Outdoor dining set ideas for terraces and cafes | SUN SEATINGS",
       seoDescription:
         "Explore layout and styling ideas for luxury outdoor dining collections across homes, lawns and commercial spaces."
     },
@@ -779,7 +779,7 @@
       featuredImage: assetPath("Swings", "Saturn.png"),
       tags: ["Swings", "Trends", "Luxury Decor"],
       publishedAt: "2026-03-22T09:00:00.000Z",
-      seoTitle: "Hanging swing design trend 2026 | Wicker & Weave",
+      seoTitle: "Hanging swing design trend 2026 | SUN SEATINGS",
       seoDescription:
         "Discover why hanging swings are becoming a statement piece for luxury terraces, patios and indoor-outdoor spaces."
     }

@@ -131,12 +131,8 @@
       '<div class="announcement-bar">Summer Sale • Up to 60% OFF • Free styling advice • Pan India delivery</div>' +
       '<header class="site-header">' +
       '  <div class="container header-row">' +
-      '    <a class="logo-wrap" href="index.html">' +
-      '      <span class="logo-box"><img src="' + DATA.assetPath("LOGO", "Wicker & Weave.png") + '" alt="Wicker & Weave logo"></span>' +
-      '      <span>' +
-      '        <h1 class="logo-title">Wicker & Weave</h1>' +
-      '        <p class="logo-subtitle">Exclusive Outdoor Furniture</p>' +
-      '      </span>' +
+      '    <a class="logo-wrap logo-wrap-brand" href="index.html">' +
+      '      <span class="logo-box logo-box-wide"><img src="' + DATA.assetPath("LOGO", "SUN SEATINGS.png") + '" alt="SUN SEATINGS logo"></span>' +
       '    </a>' +
       '    <nav class="nav">' +
       navItems()
@@ -227,7 +223,7 @@
       '<footer class="footer">' +
       '  <div class="container footer-grid">' +
       "    <div>" +
-      '      <p class="footer-title">Wicker & Weave</p>' +
+      '      <p class="footer-title">SUN SEATINGS</p>' +
       '      <p class="footer-copy">A luxury furniture catalog designed to feel like a premium commerce experience, with quotation-first conversion for homes, architects, cafes and hospitality projects.</p>' +
       '      <div class="footer-link-list">' +
       '        <span class="footer-meta">' + escapeHtml(DATA.siteConfig.address) + "</span>" +
@@ -267,7 +263,7 @@
       "    </div>" +
       "  </div>" +
       '  <div class="container footer-bottom">' +
-      '    <span class="footer-meta">© 2026 Wicker & Weave. Built for luxury catalogue selling.</span>' +
+      '    <span class="footer-meta">© 2026 SUN SEATINGS. Built for luxury catalogue selling.</span>' +
       '    <div class="footer-pills">' +
       '      <span class="footer-pill">SEO Ready</span>' +
       '      <span class="footer-pill">Lead Capture</span>' +
@@ -478,7 +474,7 @@
       '    <p class="section-subtitle">' +
       escapeHtml(
         options.description ||
-          "Fill the form and the Wicker & Weave team can call, WhatsApp or email you with pricing, delivery timeline and catalog assistance."
+          "Fill the form and the SUN SEATINGS team can call, WhatsApp or email you with pricing, delivery timeline and catalog assistance."
       ) +
       "</p>" +
       '    <form class="form-grid enquiry-form" data-enquiry-type="' + escapeHtml(options.type) + '" data-product-id="' + escapeHtml(options.productId || "") + '" data-product-name="' + escapeHtml(options.productName || "") + '">' +
@@ -1001,7 +997,7 @@
       var items = filteredProducts(state);
       var visible = items.slice(0, state.visible);
       var globalSearchInput = document.getElementById("global-search-input");
-      setMeta(heading.title + " | Wicker & Weave", heading.description);
+      setMeta(heading.title + " | SUN SEATINGS", heading.description);
 
       content.innerHTML =
         '<section class="section">' +
@@ -1237,12 +1233,12 @@
       counts[product.categorySlug] = (counts[product.categorySlug] || 0) + 1;
     });
 
-    setMeta("Categories | Wicker & Weave", "Explore all Wicker & Weave categories, from outdoor sofas to swings, umbrellas and bar sets.");
+    setMeta("Categories | SUN SEATINGS", "Explore all SUN SEATINGS categories, from outdoor sofas to swings, umbrellas and bar sets.");
 
     content.innerHTML =
       '<section class="section">' +
       '  <div class="container">' +
-      '    <div class="surface page-hero"><p class="eyebrow">Categories</p><h1 class="section-title">Browse the Wicker & Weave collection by furniture type.</h1></div>' +
+      '    <div class="surface page-hero"><p class="eyebrow">Categories</p><h1 class="section-title">Browse the SUN SEATINGS collection by furniture type.</h1></div>' +
       '  </div>' +
       "</section>" +
       '<section class="section" style="padding-top:0;"><div class="container"><div class="grid grid-4">' +
@@ -1432,10 +1428,10 @@
   }
 
   function renderAboutPage() {
-    setMeta("About | Wicker & Weave", "Learn about the Wicker & Weave brand, luxury positioning and quotation-first customer experience.");
+    setMeta("About | SUN SEATINGS", "Learn about the SUN SEATINGS brand, luxury positioning and quotation-first customer experience.");
     content.innerHTML =
       '<section class="section"><div class="container"><div class="two-col">' +
-      '  <div class="surface card"><p class="eyebrow">About Brand</p><h1 class="section-title">A luxury outdoor brand built for modern Indian spaces.</h1><p class="section-subtitle">Wicker & Weave blends premium catalogue merchandising with personal quotation support. The site is designed to feel familiar to shoppers used to Flipkart, Amazon and Meesho, while elevating the brand with a cleaner, more luxurious finish.</p></div>' +
+      '  <div class="surface card"><p class="eyebrow">About Brand</p><h1 class="section-title">A luxury outdoor brand built for modern Indian spaces.</h1><p class="section-subtitle">SUN SEATINGS blends premium catalogue merchandising with personal quotation support. The site is designed to feel familiar to shoppers used to Flipkart, Amazon and Meesho, while elevating the brand with a cleaner, more luxurious finish.</p></div>' +
       '  <div class="surface card"><div class="grid grid-2">' +
       [
         ["Luxury-first", "Elevated brand expression with high-conversion ecommerce patterns."],
@@ -1452,7 +1448,7 @@
   }
 
   function renderContactPage() {
-    setMeta("Contact | Wicker & Weave", "Send a product enquiry, request quotation, call or start a WhatsApp conversation with Wicker & Weave.");
+    setMeta("Contact | SUN SEATINGS", "Send a product enquiry, request quotation, call or start a WhatsApp conversation with SUN SEATINGS.");
     content.innerHTML =
       '<section class="section">' +
       '  <div class="container">' +
@@ -1483,7 +1479,7 @@
   function renderCatalogPage() {
     var categories = STORE.getCategories();
     var products = STORE.getProducts();
-    setMeta("Catalog PDF | Wicker & Weave", "Request the Wicker & Weave digital catalog and get a quotation-ready product guide.");
+    setMeta("Catalog PDF | SUN SEATINGS", "Request the SUN SEATINGS digital catalog and get a quotation-ready product guide.");
 
     content.innerHTML =
       '<section class="section"><div class="container">' +
@@ -1498,7 +1494,7 @@
 
   function renderBlogPage() {
     var posts = STORE.getBlogPosts();
-    setMeta("Blog | Wicker & Weave", "SEO-ready blog for Wicker & Weave covering outdoor furniture buying guides, styling and trends.");
+    setMeta("Blog | SUN SEATINGS", "SEO-ready blog for SUN SEATINGS covering outdoor furniture buying guides, styling and trends.");
 
     content.innerHTML =
       '<section class="section"><div class="container">' +
@@ -1560,7 +1556,7 @@
   }
 
   function renderNotFound(message) {
-    setMeta("Not Found | Wicker & Weave", "The requested content could not be found.");
+    setMeta("Not Found | SUN SEATINGS", "The requested content could not be found.");
     content.innerHTML =
       '<section class="section"><div class="container"><div class="surface page-hero" style="text-align:center;max-width:880px;margin:0 auto;">' +
       '  <p class="eyebrow">404</p>' +

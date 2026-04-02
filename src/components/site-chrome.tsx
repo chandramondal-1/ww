@@ -80,23 +80,15 @@ export function SiteChrome({ categories, searchIndex, children }: SiteChromeProp
 
       <header className="sticky top-0 z-50 border-b border-white/70 bg-white/90 backdrop-blur-xl">
         <div className="container-shell flex h-20 items-center gap-4">
-          <Link className="flex min-w-0 items-center gap-3" href="/">
-            <div className="relative h-11 w-11 overflow-hidden rounded-2xl border border-[#2874F0]/20 bg-white shadow-sm">
+          <Link className="flex min-w-0 items-center" href="/">
+            <div className="relative h-[52px] w-[168px] shrink-0 overflow-hidden sm:h-[60px] sm:w-[238px]">
               <Image
-                alt="Wicker & Weave"
+                alt="SUN SEATINGS logo"
                 fill
-                className="object-cover"
-                src={assetPath("LOGO", "Wicker & Weave.png")}
+                className="object-contain"
+                src={assetPath("LOGO", "SUN SEATINGS.png")}
                 unoptimized
               />
-            </div>
-            <div className="hidden min-w-0 sm:block">
-              <p className="font-[var(--font-heading)] text-2xl font-semibold tracking-[0.12em] text-[#1f2937]">
-                Wicker & Weave
-              </p>
-              <p className="text-[10px] uppercase tracking-[0.4em] text-[#6b7280]">
-                Exclusive Outdoor Furniture
-              </p>
             </div>
           </Link>
 
@@ -268,7 +260,7 @@ export function SiteChrome({ categories, searchIndex, children }: SiteChromeProp
         <div className="container-shell grid gap-10 py-14 lg:grid-cols-[1.4fr,1fr,1fr,1fr]">
           <div>
             <p className="font-[var(--font-heading)] text-4xl font-semibold tracking-[0.08em]">
-              Wicker & Weave
+              SUN SEATINGS
             </p>
             <p className="mt-4 max-w-md text-sm leading-7 text-slate-300">
               A luxury furniture catalog designed to feel like a premium commerce experience, with
@@ -316,7 +308,7 @@ export function SiteChrome({ categories, searchIndex, children }: SiteChromeProp
 
         <div className="border-t border-white/10">
           <div className="container-shell flex flex-col gap-4 py-5 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
-            <p>© 2026 Wicker & Weave. Built for luxury catalogue selling.</p>
+            <p>© 2026 SUN SEATINGS. Built for luxury catalogue selling.</p>
             <div className="flex flex-wrap items-center gap-3">
               <span className="rounded-full bg-white/5 px-3 py-1">SEO Ready</span>
               <span className="rounded-full bg-white/5 px-3 py-1">Lead Capture</span>

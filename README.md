@@ -1,6 +1,6 @@
-# Wicker & Weave
+# SUN SEATINGS
 
-This workspace now contains a plain `HTML + CSS + JavaScript` version of the Wicker & Weave luxury furniture catalog website.
+This workspace now contains a plain `HTML + CSS + JavaScript` version of the SUN SEATINGS luxury furniture catalog website.
 
 ## Static entry files
 
@@ -49,5 +49,3 @@ The static site reads them directly from there.
 - The older Next.js scaffold is still present in `src/` if you want to reuse it later
 - The pure static version is the one served by the root `.html` files
 - Because this is now static, server features like PostgreSQL, SMTP and Cloudinary are not active in the HTML/JS version unless you reconnect them later through a real backend
-# ww
-# Wicker

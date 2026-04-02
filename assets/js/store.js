@@ -182,7 +182,7 @@
       bestSeller: Boolean(draft.bestSeller || draft.featured),
       deliveryEstimate: cleanString(draft.deliveryEstimate) || "Custom dispatch timeline on request",
       warranty: cleanString(draft.warranty) || "As per quotation",
-      seoTitle: cleanString(draft.seoTitle) || cleanString(draft.name) + " | " + category.name + " by Wicker & Weave",
+      seoTitle: cleanString(draft.seoTitle) || cleanString(draft.name) + " | " + category.name + " by SUN SEATINGS",
       seoDescription: cleanString(draft.seoDescription) || cleanString(draft.description),
       createdAt: draft.createdAt
     };

@@ -81,7 +81,7 @@ export function EnquiryForm({
           {title}
         </h3>
         <p className="mt-2 text-sm leading-7 text-[#6b7280]">
-          Fill the form and the Wicker & Weave team can call, WhatsApp or email you with pricing,
+          Fill the form and the SUN SEATINGS team can call, WhatsApp or email you with pricing,
           delivery timeline and catalog assistance.
         </p>
       </div>

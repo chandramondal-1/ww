@@ -99,7 +99,7 @@ function normalizeStoredProduct(draft: ProductDraft, allCategories: Category[]):
     bestSeller: draft.featured,
     deliveryEstimate: "Custom dispatch timeline on request",
     warranty: "As per quotation",
-    seoTitle: `${draft.name} | ${category.name} by Wicker & Weave`,
+    seoTitle: `${draft.name} | ${category.name} by SUN SEATINGS`,
     seoDescription: draft.description
   };
 }

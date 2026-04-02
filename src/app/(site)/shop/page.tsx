@@ -6,7 +6,7 @@ import { getAllCategories, getAllProducts } from "@/lib/store";
 export const metadata: Metadata = {
   title: "Shop Luxury Outdoor Furniture",
   description:
-    "Browse, filter and enquire on premium outdoor sofas, dining sets, swings, loungers and more from Wicker & Weave."
+    "Browse, filter and enquire on premium outdoor sofas, dining sets, swings, loungers and more from SUN SEATINGS."
 };
 
 export default async function ShopPage() {

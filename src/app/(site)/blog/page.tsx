@@ -6,7 +6,7 @@ import { getAllBlogPosts } from "@/lib/store";
 
 export const metadata: Metadata = {
   title: "Furniture Blog",
-  description: "SEO-ready blog for Wicker & Weave covering outdoor furniture buying guides, styling and trends."
+  description: "SEO-ready blog for SUN SEATINGS covering outdoor furniture buying guides, styling and trends."
 };
 
 export default async function BlogPage() {

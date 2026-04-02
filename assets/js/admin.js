@@ -27,7 +27,7 @@
       return;
     }
 
-    setMeta("Admin Login | Wicker & Weave", "Admin login for the Wicker & Weave static CMS dashboard.");
+    setMeta("Admin Login | SUN SEATINGS", "Admin login for the SUN SEATINGS static CMS dashboard.");
 
     root.innerHTML =
       '<section class="admin-shell">' +
@@ -173,7 +173,7 @@
       return (
         '<div class="surface admin-panel">' +
         '  <p class="eyebrow">Dashboard</p>' +
-        '  <h1 class="section-title">Wicker & Weave admin overview</h1>' +
+        '  <h1 class="section-title">SUN SEATINGS admin overview</h1>' +
         '  <div style="margin-top:24px;">' + statsCards() + "</div>" +
         '  <div class="surface card" style="margin-top:24px;">' +
         '    <div class="split-row"><h2 class="card-title" style="margin:0;font-size:34px;">Recent enquiries</h2><span class="badge badge-blue">Lead inbox</span></div>' +
@@ -414,7 +414,7 @@
 
     function renderTab() {
       shell();
-      setMeta("Admin Dashboard | Wicker & Weave", "Local static CMS dashboard for products, categories, enquiries, banners and blog posts.");
+      setMeta("Admin Dashboard | SUN SEATINGS", "Local static CMS dashboard for products, categories, enquiries, banners and blog posts.");
 
       var panel = document.getElementById("admin-panel");
       if (state.tab === "dashboard") panel.innerHTML = renderDashboardTab();

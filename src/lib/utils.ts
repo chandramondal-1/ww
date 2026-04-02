@@ -30,7 +30,7 @@ export function assetPath(folder: string, file: string) {
 export function buildWhatsAppLink(phone: string, productName?: string) {
   const message = productName
     ? `I am interested in ${productName}. Please share pricing, lead time and catalogue details.`
-    : "Hello, I would like to know more about the Wicker & Weave collection.";
+    : "Hello, I would like to know more about the SUN SEATINGS collection.";
 
   return `https://wa.me/${phone.replace(/\D/g, "")}?text=${encodeURIComponent(message)}`;
 }

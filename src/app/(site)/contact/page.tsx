@@ -7,7 +7,7 @@ import { buildPhoneLink, buildWhatsAppLink } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Contact & Enquiry",
-  description: "Send a product enquiry, request quotation, call or start a WhatsApp conversation with Wicker & Weave."
+  description: "Send a product enquiry, request quotation, call or start a WhatsApp conversation with SUN SEATINGS."
 };
 
 export default function ContactPage() {

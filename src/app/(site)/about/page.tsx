@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Wicker & Weave",
-  description: "Learn about the Wicker & Weave brand, luxury positioning and quotation-first customer experience."
+  title: "About SUN SEATINGS",
+  description: "Learn about the SUN SEATINGS brand, luxury positioning and quotation-first customer experience."
 };
 
 export default function AboutPage() {
@@ -16,7 +16,7 @@ export default function AboutPage() {
               A luxury outdoor brand built for modern Indian spaces.
             </h1>
             <p className="mt-5 text-sm leading-8 text-[#6b7280] sm:text-base">
-              Wicker & Weave blends premium catalogue merchandising with personal quotation support.
+              SUN SEATINGS blends premium catalogue merchandising with personal quotation support.
               The site is designed to feel familiar to shoppers used to Flipkart, Amazon and Meesho,
               while elevating the brand with a cleaner, more luxurious finish.
             </p>

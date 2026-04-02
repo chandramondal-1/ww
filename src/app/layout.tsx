@@ -19,7 +19,7 @@ const bodyFont = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://wickerandweave.in"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://sunseatings.in"),
   title: {
     default: `${siteConfig.name} | ${siteConfig.tagline}`,
     template: `%s | ${siteConfig.name}`

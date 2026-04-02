@@ -5,7 +5,7 @@ import { getAllCategories, getAllProducts } from "@/lib/store";
 
 export const metadata: Metadata = {
   title: "Catalog PDF",
-  description: "Request the Wicker & Weave digital catalog and get a quotation-ready product guide."
+  description: "Request the SUN SEATINGS digital catalog and get a quotation-ready product guide."
 };
 
 export default async function CatalogPage() {

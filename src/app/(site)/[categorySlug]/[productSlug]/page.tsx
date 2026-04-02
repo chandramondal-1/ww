@@ -58,7 +58,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     sku: product.sku,
     brand: {
       "@type": "Brand",
-      name: "Wicker & Weave"
+      name: "SUN SEATINGS"
     },
     offers: {
       "@type": "Offer",

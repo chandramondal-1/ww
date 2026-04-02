@@ -6,7 +6,7 @@ import { getAllCategories, getAllProducts } from "@/lib/store";
 
 export const metadata: Metadata = {
   title: "Furniture Categories",
-  description: "Explore all Wicker & Weave categories, from outdoor sofas to swings, umbrellas and bar sets."
+  description: "Explore all SUN SEATINGS categories, from outdoor sofas to swings, umbrellas and bar sets."
 };
 
 export default async function CategoriesPage() {
@@ -23,7 +23,7 @@ export default async function CategoriesPage() {
         <div className="mb-8 rounded-[38px] bg-white p-8 shadow-card sm:p-10">
           <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#2874F0]">Categories</p>
           <h1 className="mt-3 font-[var(--font-heading)] text-5xl font-semibold text-[#1f2937] sm:text-6xl">
-            Browse the Wicker & Weave collection by furniture type.
+            Browse the SUN SEATINGS collection by furniture type.
           </h1>
         </div>
 

@@ -145,6 +145,10 @@ button {
   min-width: 0;
 }
 
+.logo-wrap-brand {
+  gap: 0;
+}
+
 .logo-box {
   position: relative;
   width: 52px;
@@ -157,10 +161,25 @@ button {
   box-shadow: 0 14px 26px rgba(48, 33, 24, 0.1);
 }
 
+.logo-box-wide {
+  width: clamp(170px, 18vw, 238px);
+  height: 60px;
+  flex: 0 0 auto;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
 .logo-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.logo-box-wide img {
+  object-fit: contain;
 }
 
 .logo-title {
@@ -2211,12 +2230,9 @@ button {
     letter-spacing: 0.18em;
   }
 
-  .logo-title {
-    font-size: 28px;
-  }
-
-  .logo-subtitle {
-    letter-spacing: 0.28em;
+  .logo-box-wide {
+    width: 168px;
+    height: 52px;
   }
 
   .hero-title,
