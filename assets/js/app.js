@@ -432,10 +432,22 @@
   }
 
   function categoryCardMarkup(category, count) {
+    var mediaStyle =
+      "background:" +
+      (category.cardMediaBackground ||
+        ("linear-gradient(135deg," +
+          category.accentFrom +
+          " 0%," +
+          category.accentTo +
+          " 100%)")) +
+      ";" +
+      (category.cardImageFit ? "--category-image-fit:" + String(category.cardImageFit) + ";" : "") +
+      (category.cardImageScale ? "--category-image-scale:" + String(category.cardImageScale) + ";" : "");
+
     return (
-      '<a class="surface card" href="' + DATA.categoryUrl(category.slug) + '">' +
-      '  <div class="category-card-media" style="background:linear-gradient(135deg,' + category.accentFrom + " 0%," + category.accentTo + ' 100%);">' +
-      '    <img src="' + category.bannerImage + '" alt="' + escapeHtml(category.name) + '">' +
+      '<a class="surface card category-card" href="' + DATA.categoryUrl(category.slug) + '">' +
+      '  <div class="category-card-media" style="' + mediaStyle + '">' +
+      '    <img class="category-card-image" src="' + category.bannerImage + '" alt="' + escapeHtml(category.name) + '">' +
       "  </div>" +
       '  <div class="category-card-body">' +
       '    <div class="split-row">' +
@@ -927,11 +939,10 @@
         var matchesCategory = state.category === "all" || product.categorySlug === state.category;
         var matchesMaterial = matchesMaterialFilter(product, state.material);
         var matchesSeating = state.seating === "all" || product.seatingCapacity === state.seating;
-        var matchesAvailability = state.availability === "all" || product.availability === state.availability;
         var matchesPrice = product.price <= state.price;
         var matchesQuery = matchesProductQuery(product, state.query);
 
-        return matchesCategory && matchesMaterial && matchesSeating && matchesAvailability && matchesPrice && matchesQuery;
+        return matchesCategory && matchesMaterial && matchesSeating && matchesPrice && matchesQuery;
       })
       .sort(function (a, b) {
         if (state.sort === "price-asc") return a.price - b.price;
@@ -956,7 +967,6 @@
       category: initialCategorySlug || "all",
       material: "all",
       seating: "all",
-      availability: "all",
       sort: getParam("sort") || "featured",
       price: maxPrice,
       query: getParam("q") || "",
@@ -995,7 +1005,6 @@
         '<div class="filter-group"><p class="filter-title">Price range</p><input id="price-range" type="range" min="5000" max="' + maxPrice + '" value="' + state.price + '" style="width:100%;accent-color:var(--brand-blue);"><p class="range-value">Up to ' + DATA.formatCurrency(state.price) + "</p></div>" +
         renderFilterGroup("Material", ["all", "rattan", "wood", "metal", "wicker"], state.material, "material", function (item) { return item; }) +
         renderFilterGroup("Seating capacity", ["all", "1 seater", "2 seater", "4 seater", "5 seater", "6 seater"], state.seating, "seating", function (item) { return item; }) +
-        renderFilterGroup("Availability", ["all", "In Stock", "Preorder", "Limited Stock"], state.availability, "availability", function (item) { return item; }) +
         "    </aside>" +
         '    <section class="surface shop-panel">' +
         '      <div class="shop-toolbar">' +
@@ -1074,7 +1083,6 @@
           state.category = initialCategorySlug || "all";
           state.material = "all";
           state.seating = "all";
-          state.availability = "all";
           state.sort = "featured";
           state.price = maxPrice;
           state.query = "";
@@ -1088,7 +1096,6 @@
           state.category = initialCategorySlug || "all";
           state.material = "all";
           state.seating = "all";
-          state.availability = "all";
           state.sort = "featured";
           state.price = maxPrice;
           state.query = "";
@@ -1508,7 +1515,7 @@
         eyebrow: "Shop / All Products",
         title: "Luxury furniture catalogue with filters, quick view and enquiry-first CTAs.",
         description:
-          "This is the largest catalog page in the experience. Filter by price, material, seating capacity and availability, then open a quick view or jump into a full detail page."
+          "This is the largest catalog page in the experience. Filter by price, material and seating capacity, then open a quick view or jump into a full detail page."
       });
     } else if (page === "categories") {
       renderCategoriesPage();

@@ -140,6 +140,8 @@
       accentFrom: "#2874F0",
       accentTo: "#00C6FF",
       badge: "Top Seller",
+      cardImageFit: "contain",
+      cardImageScale: 1.02,
       order: 1,
       heroStat: "48-hour quote turnaround"
     },
@@ -179,6 +181,9 @@
       accentFrom: "#243B53",
       accentTo: "#0EA5E9",
       badge: "Statement Design",
+      cardImageFit: "contain",
+      cardImageScale: 0.82,
+      cardMediaBackground: "linear-gradient(180deg, #fffdf9 0%, #f6efe6 100%)",
       order: 4,
       heroStat: "Designer silhouettes"
     },
@@ -231,6 +236,9 @@
       accentFrom: "#312E81",
       accentTo: "#60A5FA",
       badge: "Entertainer Edit",
+      cardImageFit: "contain",
+      cardImageScale: 1.1,
+      cardMediaBackground: "linear-gradient(180deg, #fffdf9 0%, #f6efe6 100%)",
       order: 8,
       heroStat: "Commercial friendly"
     }
@@ -405,6 +413,9 @@
       accentFrom: category.accentFrom,
       accentTo: category.accentTo,
       badge: category.badge,
+      cardImageFit: category.cardImageFit,
+      cardImageScale: category.cardImageScale,
+      cardMediaBackground: category.cardMediaBackground,
       order: category.order,
       heroStat: category.heroStat
     };
