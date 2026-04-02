@@ -288,9 +288,9 @@ export const siteConfig: SiteConfig = {
   tagline: "Exclusive Outdoor Furniture",
   description:
     "Luxury outdoor furniture catalog for modern homes, hospitality projects and premium terraces across India.",
-  phone: process.env.NEXT_PUBLIC_PHONE_NUMBER || "+91 98765 43210",
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919876543210",
-  email: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "hello@wickerandweave.in",
+  phone: process.env.NEXT_PUBLIC_PHONE_NUMBER || "+91 70295 19022",
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "917029519022",
+  email: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "agaunny2000@gmail.com",
   address: process.env.NEXT_PUBLIC_SHOWROOM_ADDRESS || "Jaipur Design Studio, Rajasthan, India",
   supportHours: process.env.NEXT_PUBLIC_SUPPORT_HOURS || "Mon-Sat - 10:00 AM to 7:00 PM"
 };

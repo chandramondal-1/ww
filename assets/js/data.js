@@ -122,9 +122,9 @@
     tagline: "Exclusive Outdoor Furniture",
     description:
       "Luxury outdoor furniture catalog for modern homes, hospitality projects and premium terraces across India.",
-    phone: "+91 98765 43210",
-    whatsappNumber: "919876543210",
-    email: "hello@wickerandweave.in",
+    phone: "+91 70295 19022",
+    whatsappNumber: "917029519022",
+    email: "agaunny2000@gmail.com",
     address: "Jaipur Design Studio, Rajasthan, India",
     supportHours: "Mon-Sat - 10:00 AM to 7:00 PM"
   };
