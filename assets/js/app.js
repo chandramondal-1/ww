@@ -658,73 +658,11 @@
     });
   }
 
-  function heroMarkup(slide) {
+  function heroSlideMarkup(slide, index) {
     return (
-      '<div class="hero-text">' +
-      '  <div class="hero-pill-row">' +
-      (slide.badges || [])
-        .map(function (badge) {
-          return '<span class="hero-pill">' + escapeHtml(badge) + "</span>";
-        })
-        .join("") +
-      "  </div>" +
-      '  <p class="eyebrow hero-eyebrow">' + escapeHtml(slide.eyebrow) + "</p>" +
-      '  <h2 class="hero-title">' + escapeHtml(slide.title) + "</h2>" +
-      '  <p class="hero-copy">' + escapeHtml(slide.subtitle) + "</p>" +
-      '  <div class="hero-actions">' +
-      '    <a class="btn btn-primary" href="' + slide.ctaPrimary.href + '">' + escapeHtml(slide.ctaPrimary.label) + " →</a>" +
-      '    <a class="btn btn-light-outline" href="' + slide.ctaSecondary.href + '">' + escapeHtml(slide.ctaSecondary.label) + "</a>" +
-      "  </div>" +
-      '  <p class="hero-trust-line">' + escapeHtml(slide.trustLine || "") + "</p>" +
-      '  <div class="hero-highlights">' +
-      (slide.highlights || [])
-        .map(function (item) {
-          return '<div class="hero-highlight"><span class="hero-highlight-icon">✓</span><span>' + escapeHtml(item) + "</span></div>";
-        })
-        .join("") +
-      "  </div>" +
-      '  <div class="hero-stats">' +
-      (slide.stats || [])
-        .map(function (stat) {
-          return '<div class="hero-stat"><div class="hero-stat-value">' + escapeHtml(stat.value) + '</div><div class="hero-stat-label">' + escapeHtml(stat.label) + "</div></div>";
-        })
-        .join("") +
-      "  </div>" +
-      "</div>" +
-      '<div class="hero-stage">' +
-      '  <div class="hero-stage-card">' +
-      '    <div class="hero-stage-top">' +
-      '      <div><p class="hero-stage-label">' + escapeHtml(slide.spotlightLabel || "Featured collection") + "</p></div>" +
-      '      <span class="offer-badge">' + escapeHtml(slide.offerBadge || "Up to 60% OFF") + "</span>" +
-      "    </div>" +
-      '    <div class="hero-media">' +
-      '      <div class="hero-media-glow"></div>' +
-      '      <div class="hero-media-frame"><img src="' + slide.image + '" alt="' + escapeHtml(slide.title) + '"></div>' +
-      "    </div>" +
-      '    <div class="hero-stage-footer">' +
-      '      <div>' +
-      '        <p class="hero-stage-title">' + escapeHtml(slide.spotlightTitle || slide.title) + "</p>" +
-      '        <p class="hero-stage-copy">' + escapeHtml(slide.spotlightCopy || slide.subtitle) + "</p>" +
-      "      </div>" +
-      '      <a class="btn btn-light-outline" href="' + escapeHtml(slide.spotlightHref || slide.ctaPrimary.href) + '">View Details</a>' +
-      "    </div>" +
-      "  </div>" +
-      '  <div class="hero-floating-card hero-floating-card-top">' +
-      '    <p class="hero-floating-label">Need a fast quote?</p>' +
-      '    <p class="hero-floating-copy">Share the product on WhatsApp and get pricing, lead time and catalog help.</p>' +
-      "  </div>" +
-      '  <div class="hero-floating-card hero-floating-card-bottom">' +
-      '    <p class="hero-floating-label">Built to convert</p>' +
-      '    <div class="hero-mini-stats">' +
-      (slide.stats || [])
-        .slice(0, 2)
-        .map(function (stat) {
-          return '<div class="hero-mini-stat"><strong>' + escapeHtml(stat.value) + '</strong><span>' + escapeHtml(stat.label) + "</span></div>";
-        })
-        .join("") +
-      "    </div>" +
-      "  </div>" +
-      "</div>"
+      '<article class="hero-slide' + (index === 0 ? " is-active" : "") + '" data-hero-slide="' + index + '" aria-label="' + escapeHtml(slide.title || ("Hero slide " + String(index + 1))) + '" aria-hidden="' + (index === 0 ? "false" : "true") + '" style="background-image:url(\'' + slide.image + '\')">' +
+      '<div class="hero-slide-inner" aria-hidden="true"></div>' +
+      "</article>"
     );
   }
 
@@ -751,11 +689,16 @@
     });
 
     content.innerHTML =
-      '<section class="section">' +
-      '  <div class="container surface hero-shell">' +
-      '    <div class="hero-grid" id="hero-grid">' + heroMarkup(DATA.heroSlides[0]) + "</div>" +
+      '<section class="hero-banner-section">' +
+      '  <div class="hero-shell">' +
+      '    <div class="hero-track" id="hero-track">' +
+      DATA.heroSlides
+        .map(function (slide, index) {
+          return heroSlideMarkup(slide, index);
+        })
+        .join("") +
+      "    </div>" +
       '    <div class="hero-controls">' +
-      '      <button class="circle-button hero-nav" type="button" data-hero-nav="prev" aria-label="Previous hero slide">←</button>' +
       '      <div class="dots" id="hero-dots">' +
       DATA.heroSlides
         .map(function (_, index) {
@@ -763,7 +706,6 @@
         })
         .join("") +
       "      </div>" +
-      '      <button class="circle-button hero-nav" type="button" data-hero-nav="next" aria-label="Next hero slide">→</button>' +
       "    </div>" +
       "  </div>" +
       "</section>" +
@@ -886,18 +828,23 @@
   }
 
   function startHeroSlider() {
-    var grid = document.getElementById("hero-grid");
+    var track = document.getElementById("hero-track");
     var dots = document.getElementById("hero-dots");
-    var navButtons = content.querySelectorAll("[data-hero-nav]");
     var heroShell = content.querySelector(".hero-shell");
+    var slides = track ? track.querySelectorAll(".hero-slide") : [];
 
-    if (!grid || !dots) {
+    if (!track || !dots || !slides.length) {
       return;
     }
 
     function updateHero(index) {
       activeHeroIndex = index;
-      grid.innerHTML = heroMarkup(DATA.heroSlides[index]);
+      track.style.transform = "translate3d(-" + String(index * 100) + "%, 0, 0)";
+      slides.forEach(function (slide, slideIndex) {
+        var isActive = slideIndex === index;
+        slide.classList.toggle("is-active", isActive);
+        slide.setAttribute("aria-hidden", isActive ? "false" : "true");
+      });
       dots.querySelectorAll(".dot").forEach(function (dot, dotIndex) {
         dot.classList.toggle("is-active", dotIndex === index);
       });
@@ -910,7 +857,7 @@
 
       heroTimer = setInterval(function () {
         updateHero((activeHeroIndex + 1) % DATA.heroSlides.length);
-      }, 4500);
+      }, 3000);
     }
 
     dots.addEventListener("click", function (event) {
@@ -922,14 +869,6 @@
       startAutoplay();
     });
 
-    navButtons.forEach(function (button) {
-      button.addEventListener("click", function () {
-        var direction = button.getAttribute("data-hero-nav") === "prev" ? -1 : 1;
-        updateHero((activeHeroIndex + direction + DATA.heroSlides.length) % DATA.heroSlides.length);
-        startAutoplay();
-      });
-    });
-
     if (heroShell) {
       heroShell.addEventListener("mouseenter", function () {
         if (heroTimer) {
@@ -939,6 +878,7 @@
       heroShell.addEventListener("mouseleave", startAutoplay);
     }
 
+    updateHero(activeHeroIndex);
     startAutoplay();
   }
 

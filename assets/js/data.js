@@ -69,6 +69,10 @@
     );
   }
 
+  function heroAsset(fileName) {
+    return "assets/images/hero/" + fileName;
+  }
+
   function formatCurrency(value) {
     return new Intl.NumberFormat("en-IN", {
       style: "currency",
@@ -522,84 +526,111 @@
   var heroSlides = [
     {
       id: "hero_1",
-      eyebrow: "Summer Sale - Up to 60% OFF",
-      title: "Luxury outdoor furniture that feels premium, fast and quotation-ready.",
+      eyebrow: "Quiet Luxury Living",
+      title: "Designer comfort that makes the room feel instantly elevated.",
       subtitle:
-        "Discover statement sofa sets, dining collections and designer swings that elevate terraces, lawns and hospitality spaces without forcing a checkout flow.",
-      image: assetPath("Sofa Sets", "Haven.png"),
+        "Explore refined sofas, lounge furniture and statement pieces presented like a private showroom, with enquiry-first buying made simple.",
+      image: heroAsset("premium-living-4.png"),
       ctaPrimary: { label: "Explore Collection", href: "shop.html" },
-      ctaSecondary: { label: "Get Catalog PDF", href: "catalog.html" },
-      badges: ["Marketplace-style browsing", "Pan India delivery", "Quotation in 24 hrs"],
+      ctaSecondary: { label: "Request Quote", href: "contact.html" },
+      badges: ["Full-screen showroom look", "Pan India delivery", "Quotation in 24 hrs"],
       highlights: [
-        "Browse products with filters, quick view and rich detail pages",
-        "Move straight to WhatsApp, call or request quote without checkout",
-        "Ideal for homes, villas, cafes, architects and hospitality projects"
+        "Warm neutral styling that feels premium from the first glance",
+        "Made for villas, penthouses, lounges and design-forward homes",
+        "Move from inspiration to quote without cart or checkout friction"
       ],
       stats: [
-        { value: "100K+", label: "happy customers" },
+        { value: "120+", label: "signature designs" },
         { value: "24 hrs", label: "quote response target" },
-        { value: "3 yrs", label: "structural warranty" }
+        { value: "3 yrs", label: "coverage support" }
       ],
-      spotlightLabel: "Top selling this week",
-      spotlightTitle: "Haven Outdoor Sofa",
-      spotlightCopy: "Deep seating comfort for terraces, lawns and rooftop lounges.",
+      spotlightLabel: "Living room signature",
+      spotlightTitle: "Soft-tone statement sofa",
+      spotlightCopy: "Balanced proportions, tactile upholstery and a calm architectural mood.",
       spotlightHref: productUrl({ categorySlug: "outdoor-sofa", slug: "haven" }),
-      offerBadge: "Up to 60% OFF",
-      trustLine: "Trusted by homeowners, architects and hospitality buyers across India."
+      offerBadge: "Curated hero edit",
+      trustLine: "Made for refined homes, villas, penthouses and hospitality interiors."
     },
     {
       id: "hero_2",
-      eyebrow: "Hospitality-grade craftsmanship",
-      title: "Resort-inspired dining and lounge pieces for modern Indian homes.",
+      eyebrow: "Modern Interior Story",
+      title: "Furniture styled like a premium editorial spread, ready for your space.",
       subtitle:
-        "Built with all-weather materials, fast quotation support and a full-service catalogue experience for buyers and architects.",
-      image: assetPath("Dining Sets", "WW-44 (4 chair + 1 table).png"),
+        "A cleaner catalog experience for buyers who want strong visuals, clear details and fast support on WhatsApp, call or quotation.",
+      image: heroAsset("premium-living-1.avif"),
       ctaPrimary: { label: "Shop by Category", href: "categories.html" },
-      ctaSecondary: { label: "Talk to Expert", href: "contact.html" },
-      badges: ["Bulk project pricing", "Weather-ready finishes", "Hospitality friendly"],
+      ctaSecondary: { label: "Get Catalog PDF", href: "catalog.html" },
+      badges: ["Editorial styling", "Premium browsing", "Fast lead capture"],
       highlights: [
-        "Dining sets curated for terraces, lawns, rooftop cafes and villas",
-        "Easy quote capture for residential and commercial requirements",
-        "Built to balance visual polish with low-maintenance performance"
+        "Full-size scenes that help products feel aspirational and premium",
+        "A luxury look that still keeps ecommerce clarity and conversion cues",
+        "Easy for homeowners, architects and hospitality buyers to shortlist"
       ],
       stats: [
-        { value: "300+", label: "catalog designs" },
+        { value: "300+", label: "catalog pieces" },
         { value: "28", label: "states served" },
-        { value: "7-14", label: "days lead time" }
+        { value: "1 click", label: "whatsapp connect" }
       ],
-      spotlightLabel: "Designer dining spotlight",
-      spotlightTitle: "WW-44 Dining Set",
-      spotlightCopy: "A hospitality-grade format for elegant outdoor hosting.",
+      spotlightLabel: "Interior-focused visual",
+      spotlightTitle: "Soft modern seating story",
+      spotlightCopy: "A premium composition built around texture, calm light and sculpted form.",
       spotlightHref: productUrl({ categorySlug: "dining-sets", slug: "ww-44-4-chair-1-table" }),
-      offerBadge: "Project-ready pricing",
-      trustLine: "Made for terraces, villas, cafes, courtyards and outdoor entertaining."
+      offerBadge: "Premium styling",
+      trustLine: "Built to feel high-end, clean and conversion-ready across desktop and mobile."
     },
     {
       id: "hero_3",
-      eyebrow: "Designer silhouettes",
-      title: "Signature swings and loungers that turn quiet corners into destination spaces.",
+      eyebrow: "Architectural Comfort",
+      title: "Spaces that feel layered, tactile and quietly luxurious.",
       subtitle:
-        "From statement hanging chairs to poolside loungers, every collection is designed to feel elevated, comfortable and instantly share-worthy.",
-      image: assetPath("Swings", "Saturn.png"),
-      ctaPrimary: { label: "Browse Swings", href: categoryUrl("swings") },
-      ctaSecondary: { label: "Request Quote", href: "contact.html" },
-      badges: ["Designer hero pieces", "WhatsApp expert help", "Fast catalog sharing"],
+        "From sofa statements to dining and lounge pieces, discover a catalog crafted to look more like a luxury brand campaign than a generic grid.",
+      image: heroAsset("premium-living-2.avif"),
+      ctaPrimary: { label: "Browse Best Sellers", href: "shop.html?sort=popular" },
+      ctaSecondary: { label: "Talk to Expert", href: "contact.html" },
+      badges: ["Architect-ready", "Luxury textures", "Premium presentation"],
       highlights: [
-        "Statement swings and loungers built to photograph beautifully",
-        "Detailed product pages designed to answer buyer questions upfront",
-        "Quick callbacks and WhatsApp support for finish, size and lead time"
+        "Designed to help every hero image land with more atmosphere and depth",
+        "Useful for projects where the first impression needs to feel elevated",
+        "Perfect for premium homes, studios, showrooms and design consultations"
       ],
       stats: [
         { value: "4.8/5", label: "average ratings" },
-        { value: "60%", label: "seasonal discounts" },
-        { value: "1 click", label: "WhatsApp connect" }
+        { value: "60%", label: "seasonal savings" },
+        { value: "100K+", label: "happy buyers" }
       ],
-      spotlightLabel: "Statement design edit",
-      spotlightTitle: "Saturn Hanging Swing",
-      spotlightCopy: "A sculptural focal piece for patios, balconies and reading corners.",
-      spotlightHref: productUrl({ categorySlug: "swings", slug: "saturn" }),
-      offerBadge: "Talk to our expert",
-      trustLine: "Built for effortless discovery, faster decisions and premium first impressions."
+      spotlightLabel: "Comfort-led moodboard",
+      spotlightTitle: "Layered living composition",
+      spotlightCopy: "A showroom-style frame that helps the catalog feel richer and more cinematic.",
+      spotlightHref: "shop.html?sort=featured",
+      offerBadge: "Luxury look",
+      trustLine: "Built for stronger first impressions, richer storytelling and faster enquiries."
+    },
+    {
+      id: "hero_4",
+      eyebrow: "Curated Catalogue Experience",
+      title: "A full-width premium banner that moves like a luxury storefront.",
+      subtitle:
+        "The hero now side-slides automatically, holds focus on full-size imagery and keeps quotation, WhatsApp and catalog access close to the first interaction.",
+      image: heroAsset("premium-living-3.avif"),
+      ctaPrimary: { label: "View All Products", href: "shop.html" },
+      ctaSecondary: { label: "Open WhatsApp", href: buildWhatsAppLink(siteConfig.whatsappNumber) },
+      badges: ["Auto side slider", "Full-size imagery", "Luxury-first UI"],
+      highlights: [
+        "Clean motion every 2.3 seconds for a polished banner experience",
+        "Large-format imagery that gives the site a high-end campaign feel",
+        "Direct conversion paths without interrupting the visual storytelling"
+      ],
+      stats: [
+        { value: "2.3 sec", label: "auto slide timing" },
+        { value: "Full size", label: "hero imagery" },
+        { value: "90+", label: "premium ui score" }
+      ],
+      spotlightLabel: "Hero experience",
+      spotlightTitle: "Side-sliding luxury banner",
+      spotlightCopy: "Designed to feel immersive first, while staying sharp, readable and sales-focused.",
+      spotlightHref: "shop.html",
+      offerBadge: "New hero",
+      trustLine: "A premium landing experience with bigger imagery and smoother rhythm."
     }
   ];
 
