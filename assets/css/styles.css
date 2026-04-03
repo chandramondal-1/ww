@@ -463,9 +463,10 @@ button {
 
 .mega-menu {
   position: absolute;
-  top: calc(100% + 14px);
+  top: calc(100% + 10px);
   left: 0;
   display: none;
+  z-index: 24;
   width: 560px;
   padding: 20px;
   border: 1px solid rgba(255, 255, 255, 0.86);
@@ -476,8 +477,24 @@ button {
   box-shadow: var(--brand-inner), var(--brand-shadow-strong);
 }
 
-.nav-item:hover .mega-menu {
+.mega-menu::before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: 0;
+  right: 0;
+  height: 18px;
+}
+
+.nav-item:hover .mega-menu,
+.nav-item:focus-within .mega-menu {
   display: block;
+}
+
+.nav-item:hover .nav-button,
+.nav-item:focus-within .nav-button {
+  background: linear-gradient(135deg, #f8f3ec 0%, #efe5d8 100%);
+  color: var(--brand-blue);
 }
 
 .mega-menu-head {
