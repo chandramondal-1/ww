@@ -1527,9 +1527,7 @@
       '  <div class="surface card"><div class="grid grid-2">' +
       [
         ["Luxury-first", "Elevated brand expression with high-conversion ecommerce patterns."],
-        ["Catalog model", "No cart or checkout. The journey ends in enquiry, WhatsApp or call."],
-        ["Project-ready", "Made for homeowners, cafes, villas, resorts and architects."],
-        ["CMS powered", "Admin can manage products, categories, banners, blog posts and enquiries."]
+        ["Project-ready", "Made for homeowners, cafes, villas, resorts and architects."]
       ]
         .map(function (item) {
           return '<div class="trust-card"><h3 class="card-title" style="margin-top:0;font-size:24px;">' + item[0] + '</h3><p class="card-copy">' + item[1] + "</p></div>";
