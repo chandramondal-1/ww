@@ -307,8 +307,8 @@
       "  </div>" +
       "</div>" +
       '<div class="floating-stack">' +
-      '  <a class="floating-button is-whatsapp" href="' + DATA.buildWhatsAppLink(DATA.siteConfig.whatsappNumber) + '" target="_blank" rel="noreferrer" aria-label="Open WhatsApp">💬</a>' +
-      '  <a class="floating-button is-call" href="' + DATA.buildPhoneLink(DATA.siteConfig.phone) + '" aria-label="Call">📞</a>' +
+      '  <a class="floating-button is-whatsapp" href="' + DATA.buildWhatsAppLink(DATA.siteConfig.whatsappNumber) + '" target="_blank" rel="noreferrer" aria-label="Open WhatsApp"><span class="floating-icon-whatsapp" aria-hidden="true">💬</span></a>' +
+      '  <a class="floating-button is-call" href="' + DATA.buildPhoneLink(DATA.siteConfig.phone) + '" aria-label="Call"><span class="floating-icon-phone" aria-hidden="true">📞</span></a>' +
       '  <button class="floating-button is-top" id="scroll-top" aria-label="Scroll to top">↑</button>' +
       "</div>";
 
