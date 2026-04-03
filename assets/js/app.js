@@ -361,11 +361,6 @@
       "  </div>" +
       '  <div class="container footer-bottom">' +
       '    <span class="footer-meta">© 2026 SUN SEATINGS. Built for luxury catalogue selling.</span>' +
-      '    <div class="footer-pills">' +
-      '      <span class="footer-pill">SEO Ready</span>' +
-      '      <span class="footer-pill">Lead Capture</span>' +
-      '      <span class="footer-pill">Admin CMS</span>' +
-      "    </div>" +
       "  </div>" +
       "</footer>";
   }
