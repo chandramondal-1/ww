@@ -1426,7 +1426,7 @@
         '        <div class="product-actions" style="grid-template-columns:repeat(2,minmax(0,1fr));">' +
         '          <a class="btn btn-green" href="' + DATA.buildWhatsAppLink(DATA.siteConfig.whatsappNumber, product.name) + '" target="_blank" rel="noreferrer">WhatsApp Now</a>' +
         '          <a class="btn btn-blue" href="' + DATA.buildPhoneLink(DATA.siteConfig.phone) + '">Call Now</a>' +
-        '          <button class="btn btn-outline" type="button" data-open-quote="' + escapeHtml(product.id) + '">📝 Request Quote</button>' +
+        '          <a class="btn btn-outline" href="' + DATA.buildEmailLink(DATA.siteConfig.email, product.name) + '">📧 Email</a>' +
         '          <a class="btn btn-outline" href="' + DATA.siteConfig.catalogPdf + '" target="_blank" rel="noreferrer">📥 Download Catalog</a>' +
         "        </div>" +
         '        <div class="highlights"><p class="eyebrow" style="margin:0;color:var(--brand-muted);">Product Highlights</p><ul class="highlight-list">' +

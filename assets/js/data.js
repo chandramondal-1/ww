@@ -100,6 +100,16 @@
     return "tel:" + String(phone).replace(/\s+/g, "");
   }
 
+  function buildEmailLink(email, productName) {
+    var subject = productName
+      ? "SUN SEATINGS enquiry for " + productName
+      : "SUN SEATINGS product enquiry";
+    var body = productName
+      ? "Hello,\n\nI am interested in " + productName + ". Please share pricing, availability and catalogue details.\n"
+      : "Hello,\n\nPlease share pricing and catalogue details for your collection.\n";
+    return "mailto:" + String(email || "").trim() + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  }
+
   function categoryUrl(slug) {
     return "category.html?slug=" + encodeURIComponent(slug);
   }
@@ -820,6 +830,7 @@
     formatDate: formatDate,
     buildWhatsAppLink: buildWhatsAppLink,
     buildPhoneLink: buildPhoneLink,
+    buildEmailLink: buildEmailLink,
     catalogPdfUrl: catalogPdfUrl,
     categoryUrl: categoryUrl,
     productUrl: productUrl,
